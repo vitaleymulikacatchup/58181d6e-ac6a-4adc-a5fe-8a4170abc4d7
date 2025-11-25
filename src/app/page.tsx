@@ -6,8 +6,9 @@ import NavbarLayoutFloatingInline from '@/components/navbar/NavbarLayoutFloating
 import HeroBillboardCarousel from '@/components/sections/hero/HeroBillboardCarousel';
 import ProductCardOne from '@/components/sections/product/ProductCardOne';
 import TestimonialCardOne from '@/components/sections/testimonial/TestimonialCardOne';
+import BlogCardOne from '@/components/sections/blog/BlogCardOne';
 import FooterSocial from '@/components/sections/footer/FooterSocial';
-import { MapPin, Home, MessageSquare, Facebook, Twitter, Instagram } from "lucide-react";
+import { MapPin, Home, MessageSquare, Facebook, Twitter, Instagram, ArrowUpRight } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -182,6 +183,73 @@ export default function HomePage() {
               rating: 5,
               imageSrc: "https://pixabay.com/get/g98e14e6de29cc12dea97bad3c20ca1367a0a6943c4537941ce89bef1999de9d7aed1db5085f6dc613729d9e64313af0033d5a7c14bbe7067984e6ee3b5c48f35_1280.jpg",
               imageAlt: "Lisa Thompson portrait"
+            }
+          ]}
+        />
+      </div>
+
+      <div id="blog" data-section="blog">
+        <BlogCardOne
+          title="Latest Rental Tips"
+          description="Expert advice and insights to help you find and secure your perfect rental property"
+          tag="Blog"
+          tagIcon={ArrowUpRight}
+          textboxLayout="default"
+          animationType="slide-up"
+          blogs={[
+            {
+              id: "1",
+              category: "Tips",
+              title: "First-Time Renter's Guide",
+              excerpt: "Essential tips and tricks for navigating your first apartment search and lease signing",
+              imageSrc: "https://pixabay.com/get/g3be2cbbb57dce0b1b07f72b60d14faf2717be22501a0e29e67047abda51a9d1e64d29dd3a4f6221915f6d432d307d4246d76bfd054956b8508d2851b94cdaf80_1280.png",
+              imageAlt: "First-time renter guide",
+              authorName: "Sarah Mitchell",
+              authorAvatar: "https://pixabay.com/get/g3be2cbbb57dce0b1b07f72b60d14faf2717be22501a0e29e67047abda51a9d1e64d29dd3a4f6221915f6d432d307d4246d76bfd054956b8508d2851b94cdaf80_1280.png",
+              date: "Jan 15, 2025",
+              onBlogClick: () => console.log('Blog clicked')
+            },
+            {
+              id: "2",
+              category: "Finance",
+              title: "Understanding Rental Costs",
+              excerpt: "Breaking down all the costs involved in renting an apartment beyond just monthly rent",
+              imageSrc: "https://pixabay.com/get/g0cc308ccfea904464cff26a950eb27ff9db21cc667bed336abc18bc2018f7f45086cd08dc2157f2803931f09cb23d1bd296a8e317f8537d35b0814b81bb29dac_1280.jpg",
+              imageAlt: "Rental costs guide",
+              authorName: "Michael Rodriguez",
+              authorAvatar: "https://pixabay.com/get/ga0dcbc3eee41c2083be3cbba1fc2136c5f36ed9fc1dcfcf79023626e54247033c0d7407f31b3ebe500be69adeec42fbba62538a5b5820df091adc4a8ec61b7a0_1280.jpg",
+              date: "Jan 12, 2025",
+              onBlogClick: () => console.log('Blog clicked')
+            },
+            {
+              id: "3",
+              category: "Legal",
+              title: "Tenant Rights & Responsibilities",
+              excerpt: "Know your rights as a tenant and understand your lease obligations",
+              imageSrc: "https://pixabay.com/get/g2bb7735fe9a9dca6db708a652327fc4704478c3cd07e2e1ed783ac12e1dc5136064a827d6a368d54dcbcf188f0674d539afb0994b10e7f777370d46f57ad5dec_1280.jpg",
+              imageAlt: "Tenant rights guide",
+              authorName: "Emma Johnson",
+              authorAvatar: "https://pixabay.com/get/g8c66d3b839549ec067dd0bd5429de5a71c015fc7f75c391eff38cbaa885367ae71749e9565ec16d5828a9fcc9abec86c07d9ee33c97fbf5aeb7beb87079ccf44_1280.jpg",
+              date: "Jan 10, 2025",
+              onBlogClick: () => console.log('Blog clicked')
+            },
+            {
+              id: "4",
+              category: "Moving",
+              title: "Moving Day Checklist",
+              excerpt: "Complete checklist to ensure a smooth and stress-free moving experience",
+              imageSrc: "https://pixabay.com/get/g4737bd433d5a24b06af91971f078fc7880288c40f9f21a46ad5e4c74f7ea6de4e3362ff0ff03d19cd9eb649ef27ade27985001adecf0df1fa441f127f1c6ca3a_1280.jpg",
+              imageAlt: "Moving day checklist",
+              authorName: "David Chen",
+              authorAvatar: "https://pixabay.com/get/g38e80f28906d9aff3129344a73fd71647b1458d6b1aa6558cce033195c20ba8cd3bcc886ec1a18babcbf798a275e39160f1f229f9a2b20c70433ecc74ddfef5c_1280.jpg",
+              date: "Jan 8, 2025",
+              onBlogClick: () => console.log('Blog clicked')
+            }
+          ]}
+          buttons={[
+            {
+              text: "View All Articles",
+              href: "/blog"
             }
           ]}
         />
