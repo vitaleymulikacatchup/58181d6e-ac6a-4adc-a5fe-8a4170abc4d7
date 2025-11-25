@@ -1,6 +1,6 @@
 "use client";
 
-import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 import NavbarStyleApple from "@/components/navbar/NavbarStyleApple/NavbarStyleApple";
 import HeroBillboard from "@/components/sections/hero/HeroBillboard";
 import FeatureCardOne from "@/components/sections/feature/FeatureCardOne";
@@ -11,9 +11,10 @@ import TeamCardOne from "@/components/sections/team/TeamCardOne";
 import FaqBase from "@/components/sections/faq/FaqBase";
 import ContactCenter from "@/components/sections/contact/ContactCenter";
 import FooterBase from "@/components/sections/footer/FooterBase";
-import { TrendingUp, Home, Search, Heart, DollarSign, Users, MapPin, Star, Check, Mail } from 'lucide-react';
+import Link from "next/link";
+import { TrendingUp, Search, Heart, DollarSign, Users, MapPin, Star, Check, Mail } from 'lucide-react';
 
-export default function Home() {
+export default function HomePage() {
   return (
     <ThemeProvider 
       defaultButtonVariant="hover-magnetic" 
@@ -27,23 +28,24 @@ export default function Home() {
       secondaryButtonStyle="glass" 
       showBlurBottom={false}
     >
-      <NavbarStyleApple
-        navItems={[
-          { name: "Features", id: "features" },
-          { name: "About", id: "about" },
-          { name: "Pricing", id: "pricing" },
-          { name: "Contact", id: "contact" }
-        ]}
-        brandName="RentSearch"
-      />
+      <div id="nav" data-section="nav">
+        <NavbarStyleApple
+          navItems={[
+            { name: "Features", id: "features" },
+            { name: "About", id: "about" },
+            { name: "Pricing", id: "pricing" },
+            { name: "Contact", id: "contact" }
+          ]}
+          brandName="RentSearch"
+        />
+      </div>
       
       <div id="hero" data-section="hero">
         <HeroBillboard
           title="Find Your Dream Rental Home"
           description="Search thousands of apartments and houses with our advanced filtering system. Find the perfect place to call home."
           tag="Rental Search"
-          tagIcon={Home}
-          imageSrc="/placeholders/placeholder1.jpg"
+          imageSrc="/placeholders/placeholder1.webp"
           imageAlt="Beautiful apartment interior"
           buttons={[
             { text: "Start Searching", href: "#features" },
@@ -65,25 +67,25 @@ export default function Home() {
             {
               title: "Advanced Search",
               description: "Filter by location, price, amenities, and more to find exactly what you're looking for",
-              imageSrc: "/placeholders/placeholder2.jpg",
+              imageSrc: "/placeholders/placeholder1.webp",
               imageAlt: "Advanced search interface"
             },
             {
               title: "Verified Listings",
               description: "All properties are verified by our team to ensure accuracy and legitimacy",
-              imageSrc: "/placeholders/placeholder3.jpg",
+              imageSrc: "/placeholders/placeholder1.webp",
               imageAlt: "Verified property listing"
             },
             {
               title: "Instant Notifications",
               description: "Get notified immediately when new properties matching your criteria become available",
-              imageSrc: "/placeholders/placeholder4.jpg",
+              imageSrc: "/placeholders/placeholder1.webp",
               imageAlt: "Notification on mobile device"
             },
             {
               title: "Virtual Tours",
               description: "Take immersive virtual tours of properties from the comfort of your home",
-              imageSrc: "/placeholders/placeholder5.jpg",
+              imageSrc: "/placeholders/placeholder1.webp",
               imageAlt: "Virtual tour experience"
             }
           ]}
@@ -94,7 +96,7 @@ export default function Home() {
         <AboutMetric
           title="Trusted by thousands of renters across the country, RentSearch has become the go-to platform for finding quality rental properties with ease and confidence"
           metrics={[
-            { icon: Home, label: "Properties Listed", value: "50,000+" },
+            { icon: TrendingUp, label: "Properties Listed", value: "50,000+" },
             { icon: Users, label: "Happy Renters", value: "25,000+" },
             { icon: MapPin, label: "Cities Covered", value: "150+" },
             { icon: Star, label: "Average Rating", value: "4.9/5" }
@@ -118,7 +120,7 @@ export default function Home() {
               role: "Marketing Manager",
               company: "Tech Startup",
               rating: 5,
-              imageSrc: "/placeholders/placeholder-person-1.jpg",
+              imageSrc: "/placeholders/placeholder1.webp",
               imageAlt: "Sarah Johnson"
             },
             {
@@ -127,7 +129,7 @@ export default function Home() {
               role: "Software Engineer",
               company: "Remote Company",
               rating: 5,
-              imageSrc: "/placeholders/placeholder-person-2.jpg",
+              imageSrc: "/placeholders/placeholder1.webp",
               imageAlt: "Mike Chen"
             },
             {
@@ -136,7 +138,7 @@ export default function Home() {
               role: "Graphic Designer",
               company: "Creative Agency",
               rating: 5,
-              imageSrc: "/placeholders/placeholder-person-3.jpg",
+              imageSrc: "/placeholders/placeholder1.webp",
               imageAlt: "Emily Rodriguez"
             }
           ]}
@@ -211,28 +213,28 @@ export default function Home() {
               id: "1",
               name: "Alex Thompson",
               role: "CEO & Founder",
-              imageSrc: "/placeholders/placeholder-person-4.jpg",
+              imageSrc: "/placeholders/placeholder1.webp",
               imageAlt: "Alex Thompson"
             },
             {
               id: "2",
               name: "Maria Garcia",
               role: "Head of Product",
-              imageSrc: "/placeholders/placeholder-person-5.jpg",
+              imageSrc: "/placeholders/placeholder1.webp",
               imageAlt: "Maria Garcia"
             },
             {
               id: "3",
               name: "David Kim",
               role: "Lead Engineer",
-              imageSrc: "/placeholders/placeholder-person-6.jpg",
+              imageSrc: "/placeholders/placeholder1.webp",
               imageAlt: "David Kim"
             },
             {
               id: "4",
               name: "Lisa Zhang",
               role: "Customer Success",
-              imageSrc: "/placeholders/placeholder-person-7.jpg",
+              imageSrc: "/placeholders/placeholder1.webp",
               imageAlt: "Lisa Zhang"
             }
           ]}
